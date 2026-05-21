@@ -88,17 +88,47 @@ public class Interfaz {
     /**
      * Solicita los datos al usuario y registra un simulador virtual.
      */
-    public static void registrarSimuladorVirtual() {
-        System.out.println("\n-- Registrar Simulador Virtual --");
-        String nombre        = leerTexto("Nombre de la atracción: ");
-        String zona          = leerTexto("Zona de ubicación: ");
-        int capacidad        = leerEntero("Capacidad máxima (personas): ");
-        int edadMinima       = leerEntero("Edad mínima permitida (anos): ");
-        double precio        = leerDecimal("Precio de entrada ($): ");
-        int estaciones       = leerEntero("Número de estaciones");
-        boolean anteojos     = leerBooleano("Requiere anteojos? (s/n):");
+/**
+ * Solicita los datos al usuario y registra un simulador virtual.
+ */
+public static void registrarSimuladorVirtual() {
 
-        //Completar para cumplir con el requerimiento
+    System.out.println("\n-- Registrar Simulador Virtual --");
+
+    String nombre =
+            leerTexto("Nombre de la atracción: ");
+
+    String zona =
+            leerTexto("Zona de ubicación: ");
+
+    int capacidad =
+            leerEntero("Capacidad máxima (personas): ");
+
+    int edadMinima =
+            leerEntero("Edad mínima permitida (años): ");
+
+    double precio =
+            leerDecimal("Precio de entrada ($): ");
+
+    int estaciones =
+            leerEntero("Número de estaciones: ");
+
+    boolean anteojos =
+            leerBooleano("¿Requiere anteojos? (s/n): ");
+
+    parque.agregarSimuladorVR(
+            nombre,
+            zona,
+            capacidad,
+            edadMinima,
+            precio,
+            estaciones,
+            anteojos);
+
+    System.out.println(
+            "Simulador virtual registrado correctamente.");
+}
+        // Completar para cumplir con el requerimiento
     }
 
     /**
@@ -106,15 +136,15 @@ public class Interfaz {
      */
     public static void registrarJuegoInfantil() {
         System.out.println("\n-- Registrar Juego Infantil --");
-        String nombre        = leerTexto("Nombre de la atracción: ");
-        String zona          = leerTexto("Zona de ubicación: ");
-        int capacidad        = leerEntero("Capacidad máxima (personas): ");
-        int edadMinima       = leerEntero("Edad mínima permitida (años): ");
-        double precio        = leerDecimal("Precio de entrada ($): ");
-        int edadMaxima       = leerEntero("Edad máxima permitida (años): ");
-        boolean supervision  = leerBooleano("Requiere supervisión personal? (s/n):");
+        String nombre = leerTexto("Nombre de la atracción: ");
+        String zona = leerTexto("Zona de ubicación: ");
+        int capacidad = leerEntero("Capacidad máxima (personas): ");
+        int edadMinima = leerEntero("Edad mínima permitida (años): ");
+        double precio = leerDecimal("Precio de entrada ($): ");
+        int edadMaxima = leerEntero("Edad máxima permitida (años): ");
+        boolean supervision = leerBooleano("Requiere supervisión personal? (s/n):");
 
-        //Completar para cumplir con el requerimiento
+        // Completar para cumplir con el requerimiento
     }
 
     /**
@@ -122,16 +152,15 @@ public class Interfaz {
      */
     public static void registrarEspectaculoPirotecnico() {
         System.out.println("\n-- Registrar Espectácuilo Pirotécnico --");
-        String nombre        = leerTexto("Nombre de la atraccion: ");
-        String zona          = leerTexto("Zona de ubicación: ");
-        int capacidad        = leerEntero("Capacidad máxima (personas): ");
-        int edadMinima       = leerEntero("Edad mínima permitida (anos): ");
-        double precio        = leerDecimal("Precio de entrada ($): ");
-        int duracion         = leerEntero("Duración en minutos: ");
-        boolean materialPeligroso    = leerBooleano("usa material peligroso? (s/n): ");
+        String nombre = leerTexto("Nombre de la atraccion: ");
+        String zona = leerTexto("Zona de ubicación: ");
+        int capacidad = leerEntero("Capacidad máxima (personas): ");
+        int edadMinima = leerEntero("Edad mínima permitida (anos): ");
+        double precio = leerDecimal("Precio de entrada ($): ");
+        int duracion = leerEntero("Duración en minutos: ");
+        boolean materialPeligroso = leerBooleano("usa material peligroso? (s/n): ");
 
-
-        //Completar para cumplir con el requerimiento
+        // Completar para cumplir con el requerimiento
     }
 
     /**
@@ -146,26 +175,25 @@ public class Interfaz {
         if (visitantes < 0) {
             System.out.println("La cantidad de visitantes no puede ser negativa.");
 
-        parque.registrarVisitantes(nombreAtraccion, visitantes);
+            parque.registrarVisitantes(nombreAtraccion, visitantes);
         }
     }
 
-    public static void mostrarIngresosDiarios(){
+    public static void mostrarIngresosDiarios() {
         parque.mostrarIngresosDiarios();
     }
 
-    public static void mostrarAtraccionesClasifRiesgo(){
+    public static void mostrarAtraccionesClasifRiesgo() {
         parque.mostrarAtraccionesClasifRiesgo();
     }
 
-    public static void generarReporteOperaciones(){
+    public static void generarReporteOperaciones() {
         parque.generarReporteOperaciones();
     }
 
-    public static void generarReporteAlertasCapacidad(){
+    public static void generarReporteAlertasCapacidad() {
         parque.generarReporteAlertasCapacidad();
     }
-
 
     // ---------------------------------------------------------------
     // METODOS DE LECTURA (utilitarios de consola)
@@ -212,4 +240,3 @@ public class Interfaz {
         return respuesta.equals("s") || respuesta.equals("si") || respuesta.equals("sí");
     }
 }
-
